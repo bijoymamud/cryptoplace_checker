@@ -1,6 +1,33 @@
 import { Link } from 'react-router-dom';
+import { CoinContext } from '../../../Context/CoinContext';
+import { useContext } from 'react';
 
 const Navbar = () => {
+
+    const { setCurrency } = useContext(CoinContext);
+
+    const handleCurrency = (e) => {
+        switch (event.target.value) {
+            case "usd": {
+                setCurrency({ name: "usd", symbol: "$" })
+                break;
+            }
+            case "eur": {
+                setCurrency({ name: "eur", symbol: "€" })
+                break;
+            }
+            case "bdt": {
+                setCurrency({ name: "bdt", symbol: "৳" })
+                break;
+            }
+            default : {
+                setCurrency({ name: "bdt", symbol: "৳" })
+                break;
+            }
+        }
+    }
+    
+
   return (
     <nav className="bg-[#0B0033] pb-3 border-b-2 border-gray-600">
       <div className="container mx-auto flex justify-between items-center px-24">
@@ -34,11 +61,13 @@ const Navbar = () => {
         <div className="flex space-x-4 items-center">
           {/* Currency Selector */}
           <div className="relative">
-            <select className="bg-transparent text-white border border-white rounded px-4 py-2 focus:outline-none focus:ring-2">
-              <option value="USD" className='bg-[#211258]'>USD</option>
-              <option value="EUR" className='bg-[#211258]'>EUR</option>
-              <option value="GBP" className='bg-[#211258]'>BDT</option>
-            </select>
+             <select
+                    onChange={handleCurrency}
+                    className="bg-transparent text-white border border-white rounded px-4 py-2 focus:outline-none focus:ring-2">
+                    <option value="usd" className='bg-[#211258]'>USD</option>
+                    <option value="eur" className='bg-[#211258]'>EUR</option>
+                    <option value="bdt" className='bg-[#211258]'>BDT</option>
+        </select>
           </div>
 
           {/* Sign up Button */}

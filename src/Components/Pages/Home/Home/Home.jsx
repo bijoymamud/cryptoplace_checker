@@ -1,9 +1,10 @@
 import React from 'react'
 import Footer from '../../Footer/Footer'
+import ShowCoins from '../ShowCoins/ShowCoins'
 
 function Home() {
     return (
-        <div className='h-screen bg-[#0B0033] text-white'>
+        <div className=' bg-[#0B0033] text-white'>
 
             <div className='py-20 text-center w-1/3 mx-auto'>
                 <h2 className='text-7xl font-bold leading-tight'>Largerst <br />Crypto <br /> Market Place</h2>
@@ -25,6 +26,8 @@ function Home() {
                     </div>
             </div>
             </div>
+
+            <ShowCoins/>
            
     </div>
     )

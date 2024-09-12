@@ -2,16 +2,16 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="bg-[#0B0033] py-4">
+    <nav className="bg-[#0B0033] pb-3 border-b-2 border-gray-600">
       <div className="container mx-auto flex justify-between items-center px-24">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           <img
             src="https://cdn4.iconfinder.com/data/icons/bitcoin-mining-and-more/405/Asset_1240-512.png"
             alt="Logo"
-            className="h-16 w-16" // Change to your logo path
+            className="w-24" // Change to your logo path
           />
-          <h1 className="text-white font-bold text-lg">Cryptoplace</h1>
+          <h1 className="text-white font-bold text-xl mt-4">Cryptoplace</h1>
         </div>
 
         {/* Nav Links */}

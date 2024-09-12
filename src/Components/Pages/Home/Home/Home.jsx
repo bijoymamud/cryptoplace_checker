@@ -15,10 +15,10 @@ function Home() {
                       <input
                           type="text"
                           placeholder="Search crypto.."
-                          className="px-4 py-4 w-full text-gray-600 focus:outline-none"/>
+                          className="px-4 py-3 w-full text-gray-600 focus:outline-none"/>
 
         {/* Search Button */}
-                    <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-10 mr-2 rounded-md focus:outline-none">
+                    <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-10 mr-1 rounded-md focus:outline-none">
                           Search
                         </button>
                         

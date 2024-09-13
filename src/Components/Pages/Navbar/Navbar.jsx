@@ -32,14 +32,16 @@ const Navbar = () => {
     <nav className="bg-[#0B0033] pb-3 border-b-2 border-gray-600">
       <div className="container mx-auto flex justify-between items-center px-24">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <Link className="flex items-center gap-2">
+          
           <img
             src="https://cdn4.iconfinder.com/data/icons/bitcoin-mining-and-more/405/Asset_1240-512.png"
             alt="Logo"
             className="w-24" // Change to your logo path
           />
+          
           <h1 className="text-white font-bold text-xl mt-4">Cryptoplace</h1>
-        </div>
+        </Link>
 
         {/* Nav Links */}
         <div className="hidden md:flex space-x-8">

@@ -2,6 +2,8 @@
 
 import React, { useContext, useEffect, useState } from 'react'
 import { CoinContext } from '../../../../Context/CoinContext'
+import { Link } from 'react-router-dom';
+import { PiDotsThreeOutlineBold } from 'react-icons/pi';
 
 export default function Home() {
   const { allCoin,currency } = useContext(CoinContext)
@@ -11,6 +13,9 @@ export default function Home() {
 
     const handleInput = (event) => {
         setInput(event.target.value);
+        if (event.target.value === "") {
+            setDisplayCoin(allCoin);
+        }
     }
 
     const handleSearch = async (event) => {
@@ -18,9 +23,10 @@ export default function Home() {
         const coins =  await allCoin.filter((item) => {
            return item.name.toLowerCase().includes(input.toLowerCase())
         })
+        setDisplayCoin(coins)
     }
     
-    
+
 
     // load allCoin data in displayCoin
 
@@ -35,7 +41,7 @@ export default function Home() {
         <h2 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
           Largest <br />Crypto <br /> Market Place
         </h2>
-        <p className="leading-tight pt-3 w-full md:w-3/4 mx-auto">
+        <p className="leading-tight pt-3 w-full md:w-2/4 mx-auto">
           Welcome to the world's largest cryptocurrency marketplace. Sign up to explore more about cryptos.
         </p>
 
@@ -50,8 +56,16 @@ export default function Home() {
                           placeholder="Search crypto..."
                           required
                           value={input}
+                          list='coinlist'
                           className="px-4 py-3 w-full text-gray-600 focus:outline-none"/>
 
+                      <datalist id='coinlist'>
+                          
+                          {
+                              allCoin.map((item, index)=>(<option key={index} value={item.name}/>))
+                          }
+                      
+                      </datalist> 
       
                         <button
                             type='submit'
@@ -67,18 +81,19 @@ export default function Home() {
           
           <section className='mx-auto pb-20'>
             <div className="overflow-x-auto">
-                <table className="table w-6/12 mx-auto bg-[#0b004e] table-fixed">
+                <table className="table w-7/12 mx-auto bg-[#0b004e] table-fixed">
                     <thead>
                         <tr>
-                            <th className='w-[80px]'>
+                            <th className='w-[70px]'>
                                 <label className='text-white'>
                                     Rank
                                 </label>
                             </th>
-                            <th className='text-white w-[200px]'>Name</th>
-                            <th className='text-white w-[170px]'>Price</th>
+                            <th className='text-white w-[220px]'>Name</th>
+                            <th className='text-white w-[150px]'>Price</th>
                             <th className='text-white w-[150px]'>24h Change</th>
                             <th className='text-white w-[200px]'>Market Cap</th>
+                            <th className='text-white w-[70px]'>Details</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,6 +105,7 @@ export default function Home() {
                                             <p>{singleCoin.market_cap_rank}</p>
                                         </label>
                                     </td>
+
                                     <td>
                                         <div className="flex items-center gap-3">
                                             <div className="avatar">
@@ -106,6 +122,7 @@ export default function Home() {
                                             </div>
                                         </div>
                                     </td>
+
                                     <td>
                                         <p>{currency.symbol} {singleCoin.current_price.toLocaleString()}</p>
                                     </td>
@@ -116,9 +133,18 @@ export default function Home() {
                                             {Math.floor(singleCoin.price_change_percentage_24h * 100) / 100}%
                                         </p>
                                     </td>
+
                                     <td>
                                         <p>{currency.symbol} {singleCoin.market_cap.toLocaleString()}</p>
                                     </td>
+
+                                    <td>
+
+                                    <Link to={`coin/${singleCoin.id}`}>
+                                    <PiDotsThreeOutlineBold  className='text-3xl text-gray-300'/>
+                                        </Link>
+                                        
+                                  </td>
                                 </tr>
                             )
                         }

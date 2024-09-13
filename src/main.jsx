@@ -14,11 +14,11 @@ createRoot(document.getElementById('root')).render(
   <div className=''>
     
     
-<React.StrictMode>
+<StrictMode>
 <CoinContextProvider>
              <RouterProvider router={router} />
         </CoinContextProvider>
-    </React.StrictMode>
+    </StrictMode>
        
   
 </div>

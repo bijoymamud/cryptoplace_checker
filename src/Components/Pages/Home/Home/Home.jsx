@@ -126,13 +126,15 @@ export default function Home() {
                                     <td>
                                         <p>{currency.symbol} {singleCoin.current_price.toLocaleString()}</p>
                                     </td>
+
                                     <td>
-                                        <p className={singleCoin.price_change_percentage_24h >= 0
-                                            ? 'text-green-500'
-                                            : 'text-red-500'}>
-                                            {Math.floor(singleCoin.price_change_percentage_24h * 100) / 100}%
+                                         <p className={`${singleCoin.price_change_percentage_24h >= 0
+                                                ? 'text-green-500'
+                                                : 'text-red-500'} text-center`}>
+                                                 {Math.floor(singleCoin.price_change_percentage_24h * 100) / 100}%
                                         </p>
                                     </td>
+
 
                                     <td>
                                         <p>{currency.symbol} {singleCoin.market_cap.toLocaleString()}</p>

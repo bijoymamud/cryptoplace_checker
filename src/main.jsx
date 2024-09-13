@@ -11,11 +11,15 @@ import { router } from './Router/routes.jsx';
 import CoinContextProvider from './Context/CoinContext.jsx';
 
 createRoot(document.getElementById('root')).render(
-<div className=''>
-  <StrictMode>
-        <CoinContextProvider>
+  <div className=''>
+    
+    
+<React.StrictMode>
+<CoinContextProvider>
              <RouterProvider router={router} />
         </CoinContextProvider>
-  </StrictMode>
+    </React.StrictMode>
+       
+  
 </div>
 )

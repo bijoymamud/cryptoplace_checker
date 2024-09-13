@@ -81,19 +81,19 @@ export default function Home() {
           
           <section className='mx-auto pb-20'>
             <div className="overflow-x-auto">
-                <table className="table w-7/12 mx-auto bg-[#0b004e] table-fixed">
+                <table className="table w-6/12 mx-auto bg-[#1b1255fc] table-fixed">
                     <thead>
                         <tr>
-                            <th className='w-[70px]'>
-                                <label className='text-white'>
-                                    Rank
+                            <th className='w-[50px]'>
+                                <label className='text-white text-base'>
+                                    #
                                 </label>
                             </th>
-                            <th className='text-white w-[220px]'>Name</th>
-                            <th className='text-white w-[150px]'>Price</th>
-                            <th className='text-white w-[150px]'>24h Change</th>
-                            <th className='text-white w-[200px]'>Market Cap</th>
-                            <th className='text-white w-[70px]'>Details</th>
+                            <th className='text-white w-[200px] text-base'>Name</th>
+                            <th className='text-white w-[100px] text-base'>Price</th>
+                            <th className='text-white w-[130px] text-base'>24h Change</th>
+                            <th className='text-white w-[170px] text-base'>Market Cap</th>
+                            <th className='text-white w-[70px] text-base '>Details</th>
                         </tr>
                     </thead>
                     <tbody>

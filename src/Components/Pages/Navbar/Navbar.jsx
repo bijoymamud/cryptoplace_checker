@@ -37,10 +37,10 @@ const Navbar = () => {
           <img
             src="https://cdn4.iconfinder.com/data/icons/bitcoin-mining-and-more/405/Asset_1240-512.png"
             alt="Logo"
-            className="w-24" // Change to your logo path
+            className="w-20" // Change to your logo path
           />
           
-          <h1 className="text-white font-bold text-xl mt-4">Cryptoplace</h1>
+          <h1 className="text-white font-bold text-xl mt-4">CryptoSpace</h1>
         </Link>
 
         {/* Nav Links */}
